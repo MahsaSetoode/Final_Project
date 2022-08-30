@@ -49,9 +49,10 @@ const Form = (props) => {
       <form onSubmit={formSubmitHandler}>
         <h1>Add a new Task</h1>
         <div className={` form-control ${!isValid && 'invalid'}`}>
-          <input type="text" onChange={taskTitleChangeHandler} placeholder="Title"/>
+          <input className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+           type="text" onChange={taskTitleChangeHandler} placeholder="Title"/>
           {/* <input type="text" onChange={taskChangeHandler} placeholder="Description"/> */}
-          <div className="mt-1">
+          <div>
             <textarea
               onChange={taskDesChangeHandler}
               id="about"

@@ -1,18 +1,26 @@
-/* .container{
+.container{
   display: block;
   margin-top: 0;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* h1{
+ left: -20px;
 } */
 .form-control {
-  display: flex;
-  flex-direction: row;
+  /* position: fixed; */
   margin: 0.5rem 0;
+  overflow: hidden;
 }
-
-.form-control input {
+input textarea{
+  border: 1px solid rgb(204, 200, 200);
+  background: rgb(204, 200, 200);
+}
+.form-control input textarea{
   display: block;
   width: 100%;
-  border: 1px solid #ccc;
+  
   font: inherit;
   line-height: 1.5rem;
   padding: 0 0.25rem;
@@ -20,12 +28,8 @@
 
 .form-control input:focus {
   outline: none;
-  background: #fad0ec;
-  border-color: #223d664b;
+  background: rgb(204, 200, 200);
+  /* border-color: #223d664b; */
 }
 
-.form-control invalid input {
-  border-color: red;
-  background: #ffd7d7;
-}
 
