@@ -1,13 +1,17 @@
 .task-item {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
   margin: 1rem 0;
-  background: #43768b4b;
+  background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 3px;
   color: black;
   padding: 1rem 2rem;
   cursor: pointer;
 }
 
-.task-item.complete {
+/* .task-item.complete {
   margin: 1rem 0;
   background: #43768b4b;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -15,9 +19,15 @@
   padding: 1rem 2rem;
   cursor: pointer;
   text-decoration: line-through;
-}
-
+} */
+/* 
 .button{
   display: flex;
   flex-direction: row;
+} */
+
+.box{
+  border: 1px solid rgb(31, 92, 224);
+  color: white;
+  background: rgb(31, 92, 224);
 }
