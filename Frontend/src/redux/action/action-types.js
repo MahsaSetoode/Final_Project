@@ -1,0 +1,1 @@
+export const BE_ADMIN = 'BE_ADMIN';

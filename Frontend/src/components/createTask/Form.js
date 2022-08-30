@@ -26,8 +26,11 @@ const Form = (props) => {
       return;
     }
     props.onAdd(titleValue, desValue);
+    console.log(titleValue);
     setTitleValue('');
     setDesValue('');
+    console.log(titleValue);
+    
   };
 
   const errorHandler = () => {
@@ -42,14 +45,19 @@ const Form = (props) => {
         <div className="form-control">
           <div>
             <input className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
-            type="text" onChange={taskTitleChangeHandler} placeholder="Title"/>
+            id="title"
+            name="title"
+            type="text" 
+            onChange={taskTitleChangeHandler} 
+            placeholder="Title"
+          />
           </div>
           {/* <input type="text" onChange={taskChangeHandler} placeholder="Description"/> */}
           <div className="mt-1">
             <textarea
               onChange={taskDesChangeHandler}
-              id="about"
-              name="about"
+              id="description"
+              name="description"
               rows={4}
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
               placeholder="Description"

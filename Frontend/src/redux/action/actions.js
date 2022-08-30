@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import {shallowEqual, useDispatch, useSelector} from 'react-redux'
+import {shallowEqual, useDispatch, useSelector} from 'react-redux';
 
 export function useDispatchToProps(type) {
     const dispatch = useDispatch();
