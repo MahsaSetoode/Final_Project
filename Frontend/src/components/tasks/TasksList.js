@@ -8,6 +8,9 @@ const TasksList = props => {
         <Task
           key={task.id}
           id={task.id}
+          title={task.title}
+          description={task.description}
+          state={task.state}
           onDelete={props.onDeleteItem}
           onEdit={props.onEditItem}
           onComplete={props.onCompleteItem}
