@@ -4,10 +4,21 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 5px;
   color: black;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   cursor: pointer;
+  height: 200px;
 }
 
+.text{
+  height: 80%;
+}
+
+.itemBox{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
+  /* flex-direction: row; */
+}
 /* .task-item.complete {
   margin: 1rem 0;
   background: #43768b4b;
@@ -24,13 +35,15 @@
 } */
 
 .box{
-  width: 70px;
+  width: auto;
   border: 1px solid rgb(31, 92, 224);
   color: white;
   background: rgb(31, 92, 224);
   border-radius: 4px;
 }
 
-.btn{
+.btn-edit{
   background: white;
+  border-radius: 4px;
+  color: black;
 }

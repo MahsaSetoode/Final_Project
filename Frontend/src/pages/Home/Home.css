@@ -1,9 +1,4 @@
-.full-page{
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-}
+/* 
 #task-form {
   width: 30rem;
   height: 50%;
@@ -15,7 +10,6 @@
 #tasks {
   width: 30rem;
   height: 50%;
-  /* max-width: 90%; */
   margin: 3rem auto;
   height: 100%;
   background-color: rgb(126, 177, 236);
@@ -30,18 +24,37 @@
   padding: 10px;
   padding-left: 30px;
   border-radius: 3px;
+} */
+
+.tasks-header{
+  display: block;
+  padding: 25px 30px 10px 30px;
+  background-color: #1972d9;
+  border: #1972d9;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  color: #fff;
+  font-size: 20px;
+  resize: none;
 }
 
-/* #header{
-  font-weight: bold;
-  display: block;
-  margin-bottom: 10rem;
-  color: blue;
-} */
+#tasks{
+  border-radius: 4px;
+  background-color: #1972d9;
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
+  padding-bottom: inherit;
+}
 
-/* body {
-  margin-left: 330px;
-  margin-right: 211px;
-  padding: 2rem;
-  box-shadow: 0 2px 12px rgb(0 0 0 / 20%);
-} */
+.empty{
+  display: block;
+  padding: 15% 20px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: #80a2d0;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+}
+

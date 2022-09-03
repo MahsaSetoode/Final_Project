@@ -1,0 +1,13 @@
+.select{
+    position: relative;
+}
+
+select{
+    color: #000;
+    width: 12rem;
+}
+
+select::after{
+    position: relative;
+    background-color: #e1e1e1;
+}
