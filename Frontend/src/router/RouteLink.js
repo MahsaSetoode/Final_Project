@@ -12,7 +12,7 @@ const RouteLink = [
         path: "/login",
     },
     {
-        component: Home,
+        component: Login,
         path: "/",
     },
     {

@@ -1,11 +1,6 @@
 .header {
     /* margin: 3rem auto; */
-    width: 100%;
-    padding: 0.5rem 1.5rem;
-    border: 1px solid rgb(31, 92, 224);
-    color: white;
-    background: rgb(31, 92, 224);
-    border-radius: 3px;
-    margin-top: -90px;
-    margin-left: -39px;
+    color: #fff;
+    background-color: #1972d9;
+    padding: 25px 35px;
 }

@@ -1,4 +1,4 @@
-.button {
+/* .button {
   width: 100%;
   font: inherit;
   padding: 0.5rem 1.5rem;
@@ -23,4 +23,26 @@
   .button {
     width: auto;
   }
+} */
+
+.button{
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 4px;
+  border: #1972d9;
+  background-color: #1972d9;
+  color: #fff;
+  font-size: 16px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.button:before{
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  font-weight: normal;
+  position: relative;
+  right: 15px;
 }

@@ -14,7 +14,7 @@ function App() {
       {/* <Router/> */}
       <ReactRouter>
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Login/>} />
           <Route path="/home" element={<Home/>} />
           <Route path="/edit" element={<Edit/>} />
           <Route path="/login" element={<Login/>} />

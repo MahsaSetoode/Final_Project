@@ -1,8 +1,4 @@
-/* .container{
-  display: block;
-  margin-top: 0;
-  
-} */
+/*
 .form-control {
   display: flex;
   flex-direction: column;
@@ -24,11 +20,79 @@
 .form-control input:focus {
   outline: none;
   background: rgb(204, 200, 200);
-  /* border-color: #223d664b; */
 }
 
 .form-control invalid input {
   border-color: red;
   background: #ffd7d7;
 }
+ */
+
+ .container{
+  /* display: block;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; */
+  margin: auto;
+  width: 65%;
+  padding: 15px;
+}
+h1{
+  background-color: #ffffff;
+  color: #000;
+  display: block;
+  padding: 0 0;
+  font-size: 25px;
+  resize: none;
+  text-align: left;
+}
+
+.container #title, #description, .state{
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #e1e1e1;
+  font-size: 16px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+#title{
+  height: 47px;
+}
+
+#description{
+  height: 150px;
+}
+
+.state{
+  padding: 0;
+  height: 40px;
+}
+
+#btn-handle{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
+}
+
+.btn-cancle{
+  display: block;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+  margin-bottom: 10px;
+
+  background: white;
+  color: black;
+  width: auto;
+  border: 1px solid rgb(39, 37, 37);
+  text-decoration: none;
+}
+
 

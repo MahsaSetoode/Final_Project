@@ -15,12 +15,10 @@ const Task = (props) => {
       {/* <div >
         {props.children}
       </div> */}
-      <div >
+      <div className="text">
         <h3>
           {props.title}
         </h3>
-      </div>
-      <div >
         <p>
           {props.description}
         </p>
@@ -29,11 +27,11 @@ const Task = (props) => {
         {/* <button onClick={completeHandler}>Complete</button> */}
         
         {/* <button onClick={editHandler}>Edit</button> */}
-        <div>
+        <div className="itemBox">
           <div className="box">
             {props.state}
           </div>
-          <Link to={`/edit`} className="btn">
+          <Link to={`/edit`} className="btn-edit">
             <i className="fa-regular fa-pen-to-square"/>
           </Link>
         </div>
