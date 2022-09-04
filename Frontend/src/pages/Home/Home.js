@@ -3,6 +3,7 @@ import "./Home.css";
 import Form from "../../components/createTask/Form";
 import Header from "../../components/header/Header";
 import TasksList from "../../components/tasks/TasksList";
+import { Switch, Route, useLocation } from "react-router-dom";
 
 const toDo = [
   {
@@ -82,6 +83,7 @@ const data = [
 
 function Home() {
   const [otherStates, setOtherStates] = useState([]);
+  const { pathname } = useLocation();
 
   // list of tasks
   const [tasks, setTasks] = useState(data);
@@ -113,7 +115,7 @@ function Home() {
     
   );
   if (tasks.length > 0) {
-    content = <TasksList items={tasks} onDeleteItem={deleteItemHandler} />;
+    content = <TasksList items={tasks} onDeleteItem={deleteItemHandler} path={pathname} />;
   }
   return (
     <div className="full-page">

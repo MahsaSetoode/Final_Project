@@ -14,6 +14,7 @@ const TasksList = props => {
           onDelete={props.onDeleteItem}
           onEdit={props.onEditItem}
           onComplete={props.onCompleteItem}
+          path={props.path}
         >
           {task.text}
         </Task>

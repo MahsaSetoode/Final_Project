@@ -84,8 +84,18 @@ const Form = (props) => {
           </div>
         </div>
         <div id='btn-handle'>
+          { props.path.includes("/admin") ?
+            <>
+              <Button type="submit"><i className="fa-regular fa-pen-to-square"/>Edit</Button>
+              <Link to={`admin/home`} className="btn-cancle">Cancel</Link>
+            </> 
+            : 
+            <>
+              <Link to={`/home`} className="btn-cancle">Cancel</Link>
+            </>
+          }
           <Button type="submit"><i className="fa-regular fa-pen-to-square"/>Edit</Button>
-          <Link to={`/home`} className="btn-cancle">Cancel</Link>
+          <Link to={`admin/home`} className="btn-cancle">Cancel</Link>
         </div>   
       </form>
     </div>

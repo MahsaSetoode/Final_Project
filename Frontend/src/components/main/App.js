@@ -15,8 +15,8 @@ function App() {
       <ReactRouter>
         <Routes>
           <Route path="/" element={<Login/>} />
-          <Route path="/home" element={<Home/>} />
-          <Route path="/edit" element={<Edit/>} />
+          <Route path=":user/home" element={<Home/>} />
+          <Route path="/edit/:taskId" element={<Edit/>} />
           <Route path="/login" element={<Login/>} />
         </Routes>
       </ReactRouter>
