@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Home.css";
 import Form from "../../components/createTask/Form";
 import Header from "../../components/header/Header";
 import TasksList from "../../components/tasks/TasksList";
-import { Switch, Route, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const toDo = [
   {
@@ -82,11 +82,22 @@ const data = [
 ]
 
 function Home() {
-  const [otherStates, setOtherStates] = useState([]);
+  // const [otherStates, setOtherStates] = useState([]);
   const { pathname } = useLocation();
 
   // list of tasks
   const [tasks, setTasks] = useState(data);
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
+  useEffect(() => {
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    if (tasks) {
+     setTasks(tasks);
+    }
+  }, []);
 
   const addItemHandler = (titleValue,descriptionValue) => {
     setTasks((prevTasks) => {
@@ -102,10 +113,6 @@ function Home() {
       return updated;
     });
   };
-
-  // const editItemHandler = (taskId) => {
-
-  // };
 
   let content = (
     <div className="empty">

@@ -52,7 +52,6 @@ const Form = (props) => {
             placeholder="Title"
           />
           </div>
-          {/* <input type="text" onChange={taskChangeHandler} placeholder="Description"/> */}
           <div className="mt-1">
             <textarea
               onChange={taskDesChangeHandler}
