@@ -7,8 +7,8 @@ function Login() {
     <div>
       <div className="btns">
         <h1 className="qu">Who Are You?</h1>
-        <Link to={`/home`} className="btn">Admin</Link>
-        <Link to={`/home`} className="btn">User</Link>
+        <Link to={`admin/home`} className="btn">Admin</Link>
+        <Link to={`user/home`} className="btn">User</Link>
       </div>
     </div>
   );

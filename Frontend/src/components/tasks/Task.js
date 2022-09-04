@@ -10,6 +10,7 @@ const Task = (props) => {
   };
 
   return (
+    // {!props.path.includes("/admin") ? <Navbar /> : null}
     <div className="task-item" onClick={deleteHandler}> 
       {/* className={setIsComplete && 'complete'} */}
       {/* <div >
@@ -31,9 +32,11 @@ const Task = (props) => {
           <div className="box">
             {props.state}
           </div>
-          <Link to={`/edit`} className="btn-edit">
-            <i className="fa-regular fa-pen-to-square"/>
-          </Link>
+          { props.path.includes("/admin") ?  
+            <Link to={`/edit/${props.id}`} className="btn-edit">
+              <i className="fa-regular fa-pen-to-square"/>
+            </Link>
+            : null }
         </div>
       </div>
     </div>
