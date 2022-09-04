@@ -16,9 +16,6 @@ import {
       case SET_TASKS:
         state = { ...state, tasks: action.payload };
         return state;
-    //   case SET_POSTS_LOADING:
-    //     state = { ...state, postsLoading: action.payload };
-    //     return state;
       case ADD_TASK:
         state = { ...state, tasks: [...state.tasks, action.payload] };
         return state;
