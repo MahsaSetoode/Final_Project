@@ -3,16 +3,12 @@ import "./Task.css";
 import {Link} from 'react-router-dom';
 
 const Task = (props) => {
-  // const [isComplete, setIsComplete] = useState(false);
-
   const deleteHandler = () => {
     props.onDelete(props.id);
   };
 
   return (
-    // {!props.path.includes("/admin") ? <Navbar /> : null}
     <div className="task-item" onClick={deleteHandler}> 
-      {/* className={setIsComplete && 'complete'} */}
       {/* <div >
         {props.children}
       </div> */}
@@ -25,15 +21,12 @@ const Task = (props) => {
         </p>
       </div>
       <div>
-        {/* <button onClick={completeHandler}>Complete</button> */}
-        
-        {/* <button onClick={editHandler}>Edit</button> */}
         <div className="itemBox">
           <div className="box">
             {props.state}
           </div>
           { props.path.includes("/admin") ?  
-            <Link to={`/edit/${props.id}`} className="btn-edit">
+            <Link to={`/admin/edit/${props.id}`} className="btn-edit">
               <i className="fa-regular fa-pen-to-square"/>
             </Link>
             : null }

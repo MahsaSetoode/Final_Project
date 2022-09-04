@@ -2,41 +2,38 @@ import React, { useState } from 'react';
 import ErrorModal from '../UI/error/ErrorModal'
 import Button from '../UI/button/Button'
 import "./Form.css";
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 const Form = (props) => {
   const [titleValue, setTitleValue] = useState('');
   const [desValue, setDesValue] = useState('');
-  const [isValid, setIsValid] = useState(true);
+  const [stateValue, setStateValue] = useState('');
   const [error, setError] = useState();
   
   const taskTitleChangeHandler = event => {
-    if(event.target.value.trim().length > 0){
-      setIsValid(true);
-    }
     setTitleValue(event.target.value);
   };
 
   const taskDesChangeHandler = event => {
-    if(event.target.value.trim().length > 0){
-      setIsValid(true);
-    }
     setDesValue(event.target.value);
   };
 
+  const taskStateChangeHandler = event => {
+    setStateValue(event.target.value);
+  };
+
+  const navigate = useNavigate()
   const formSubmitHandler = event => {
     event.preventDefault();
     if(titleValue.trim().length === 0 || desValue.trim().length === 0){
-      setIsValid(false);
       setError({
         title: 'Invalid Input',
         message: 'Please answer all the questions.'
       });
       return;
     }
-    props.onAdd(titleValue, desValue);
-    setTitleValue('');
-    setDesValue('');
+    props.onEdit(titleValue, desValue, stateValue);
+    navigate('/admin/home')
   };
 
   const errorHandler = () => {
@@ -48,10 +45,9 @@ const Form = (props) => {
       {error && <ErrorModal title={error.title} message={error.message} onConform={errorHandler}/>}
       <form onSubmit={formSubmitHandler}>
         <h1>Edit Task</h1>
-        <div className={` form-control ${!isValid && 'invalid'}`}>
+        <div>
           <input className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
-           id='title' type="text" onChange={taskTitleChangeHandler} placeholder="Title"/>
-          {/* <input type="text" onChange={taskChangeHandler} placeholder="Description"/> */}
+           id='title' type="text" onChange={taskTitleChangeHandler} placeholder="Title" value={props.title}/>
           <div>
             <textarea
               onChange={taskDesChangeHandler}
@@ -60,12 +56,12 @@ const Form = (props) => {
               rows={8}
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
               placeholder="Description"
-              defaultValue={''}
+              defaultValue={props.description}
             />
           </div>
           <div className="select">
             {/*onChange={changeStateHandler}*/}
-            <select name="state" className="state"> 
+            <select name="state" className="state" onChange={taskStateChangeHandler}> 
               {/* {props.otherStates.map(st => (
                 <option value={st.name}>
                   st.name
@@ -87,15 +83,13 @@ const Form = (props) => {
           { props.path.includes("/admin") ?
             <>
               <Button type="submit"><i className="fa-regular fa-pen-to-square"/>Edit</Button>
-              <Link to={`admin/home`} className="btn-cancle">Cancel</Link>
+              <Link to={`/admin/home`} className="btn-cancle">Cancel</Link>
             </> 
             : 
             <>
               <Link to={`/home`} className="btn-cancle">Cancel</Link>
             </>
           }
-          <Button type="submit"><i className="fa-regular fa-pen-to-square"/>Edit</Button>
-          <Link to={`admin/home`} className="btn-cancle">Cancel</Link>
         </div>   
       </form>
     </div>
